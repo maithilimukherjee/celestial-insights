@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Path 8</title>
+</head>
+<body>
+    <div class="life-path">
+        <h1>Your Life Path Number is 8!</h1>
+        <h4>~ The powerhouses of the universe! ~</h4>
+        <div class="life-path-img">
+            <img src="./saturn.gif" alt="Life Path 8 Gif">
+        </div>
+        <button id="readMore">Read More</button>
+        <div class="text">
+            <p id="lifePath8Text"></p>
+        </div>
+    </div>
+    
+    <style>
+
+        body {
+            background-color: rgb(0, 0, 0);
+            color: rgb(243, 245, 125);
+            font-family: 'Times New Roman', Times, serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            
+        }
+
+        h1, h4 {
+            color: gold; /* Change header color to red */
+        }
+
+        img {
+            border-radius: 15px;
+            border: none;
+            margin-top: 10px;
+            height: 300px;
+            width: 400px;
+        }
+
+        img:hover {
+            transform: scale(1.11);
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(203, 219, 52, 0.5);
+        }
+
+        .life-path {
+            margin-top: 30px;
+            background-color: rgb(0, 0, 0);
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            color: greenyellow; /* Change paragraph color to black */
+        }
+
+        #readMore {
+            border: none;
+            background-color: black;
+            padding: 12px;
+            color: white;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 1em;
+            border-radius: 20px;
+            margin-top: 20px; 
+            cursor: pointer;
+        }
+
+        #readMore:hover {
+            background-color: limegreen;
+            color: rgb(2, 1, 1);
+            transform: scale(1.09);
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+    </style>
+
+    <script>
+        const lifePath8 = `Ladies and gentlemen, let’s roll out the red carpet for our fabulous Life Path 8 individuals! 🎉 These dynamic powerhouses are not just about making money; they’re all about making an impact! With their magnetic charisma and unwavering determination, they strut through life like they own the runway—because, let’s be honest, they kind of do! 
+        Known for their ambition, Life Path 8s are like the CEOs of the universe, juggling responsibilities like a pro while looking good doing it! They are the ultimate go-getters, but don’t let their serious side fool you; they have a heart of gold! Just like a teddy bear dressed in a business suit, they blend strength and softness effortlessly.
+        In relationships, Life Path 8s are fiercely loyal and protective. They’ll shower their loved ones with affection like confetti at a party—talk about a love explosion! 💖 When it comes to partnerships, they thrive with Life Paths 2, 4, and 6, creating harmonious and supportive connections that feel like a warm hug.
+        However, they might want to tiptoe around Life Path 3, whose carefree attitude can sometimes clash with their goal-oriented vibes. But hey, opposites attract, right? So, if you’re a Life Path 3, just bring some cake to the meeting, and all will be well!
+        All in all, Life Path 8 individuals are adorable achievers who bring laughter and joy to the serious world of success. They know how to turn every challenge into an adventure, and their contagious enthusiasm for life makes them the life of every party! 🎈✨`;
+
+        let i = 0; // Initialize i for the typewriter
+        const speed = 42; // Speed in milliseconds between each character
+
+        const readMoreBtn = document.getElementById("readMore");
+
+        readMoreBtn.addEventListener("click", () => {
+            readMoreBtn.style.display = "none";
+            typeWriter();
+        });
+
+        function typeWriter() {
+            if (i < lifePath8.length) {
+                document.getElementById("lifePath8Text").innerHTML += lifePath8.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+    </script>
+</body>
+</html>

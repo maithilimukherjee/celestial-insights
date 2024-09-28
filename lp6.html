@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Path 6</title>
+</head>
+<body>
+    <div class="venus">
+        <h1>Your Life Path Number is 6!</h1>
+        <h4>~ very demure, very classy ~</h4>
+        <div class="venusimg">
+            <img src="./venus.gif" alt="Venus Gif">
+        </div>
+        <button id="readMore">Read More</button>
+        <div class="text">
+            <p id="venusBaby"></p>
+        </div>
+    </div>
+    
+    <style>
+
+        body {
+            background-color: black;
+            color: bisque;
+            font-family: 'Times New Roman', Times, serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            animation: linearGradient 10s infinite; /* Apply the animation to the body */
+        }
+
+        h1{
+            margin-top: 10px;
+        }
+        img {
+            border-radius: 15px;
+            border: none;
+            margin-top: 10px;
+            height: 330px;
+            width: 330px;
+            mix-blend-mode: screen;
+        }
+
+        img:hover {
+            transform: scale(1.11);
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(236, 234, 86, 0.5);
+        }
+
+        .venus {
+            margin-top: 50px;
+            background-color: black;
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        #readMore {
+            border: none;
+            background-color: black;
+            padding: 12px;
+            color: bisque;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 1em;
+            border-radius: 20px;
+            margin-top: 20px; 
+            cursor: pointer;
+        }
+
+        #readMore:hover {
+            background-color: bisque;
+            color: black;
+            transform: scale(1.09);
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+    </style>
+
+    <script>
+        const lifePath6 = `Ah, let’s give a big drum roll for our beloved Life Path 6 individuals! 🎉 These radiant souls are the born fashionistas, blessed with an impeccable eye for aesthetics that transforms the ordinary into the extraordinary. With their artistic flair and focused minds, they create beauty wherever they go!
+
+But it doesn’t stop there! Life Path 6s are also the epitome of nurturing love—a true family person who cherishes every moment spent with loved ones. Their warm hearts make them natural caregivers, and they embrace their roles with open arms and endless affection.
+
+Life just seems to sprinkle a little extra luck on them! 🌟 Opportunities knock at their door every day, and with their keen intuition, they know just when to grab those golden chances. With a provider mindset, they pour their love and care into their relationships, making their partners and families feel cherished and valued.
+
+When they harness their incredible potential, Life Path 6s shine brightly in their careers, leaving a trail of success and inspiration. However, they should steer clear of any temptations that may lead to addiction, as their vibrant energy is best channeled into positive pursuits.
+
+In the realm of love, they find their perfect match in Life Path 4—what a wonderful duo! But they also create a fantastic synergy with Life Paths 7 and 8, as their unique qualities complement one another beautifully. However, they may want to keep their distance from Life Path 3, as their exuberance might clash with the nurturing vibe that Life Path 6s radiate.
+
+All in all, Life Path 6 individuals embody joy, love, and creativity! Their journey is a delightful dance of nurturing relationships, seizing opportunities, and creating a harmonious life filled with laughter and beauty. 💖`;
+
+        let i = 0; // Initialize i for the typewriter
+        const speed = 42; // Speed in milliseconds between each character
+
+        const readMoreBtn = document.getElementById("readMore");
+
+        readMoreBtn.addEventListener("click", () => {
+            readMoreBtn.style.display = "none";
+            typeWriter();
+        });
+
+        function typeWriter() {
+            if (i < lifePath6.length) {
+                document.getElementById("venusBaby").innerHTML += lifePath6.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+    </script>
+</body>
+</html>

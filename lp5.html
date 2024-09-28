@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Path 5</title>
+</head>
+<body>
+    <div class="mercury">
+    <h1>Your Life Path Number is 5!</h1>
+    <h4>~ Why did the Life Path 5 person bring a ladder to the bar? Because they heard the drinks were on the house! ~</h4>
+    <div class="mercuryimg">
+        <img src="./mercury-3.gif">
+    </div>
+    <button id="readMore">Read More</button>
+    <div class="text">
+        <p id="mercuryBaby"></p>
+    </div>
+</div>
+<style>
+    
+    @keyframes linearGradient {
+    0% { background-color: rgb(1, 9, 22); }
+    50% { background-color: rgb(24, 18, 16); }
+    100% { background-color: rgb(3, 1, 15); }
+}
+
+body {
+    background-color: black;
+    color: bisque;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    animation: linearGradient 10s infinite; /* Apply the animation to the body */
+}
+
+    img{
+        border-radius: 15px;
+        border: none;
+        margin-top: 10px;
+        height: 300px;
+        width: 400px;
+        mix-blend-mode: screen;
+    }
+    img:hover{
+        transform: scale(1.11);
+        cursor: pointer;
+        box-shadow: 0 0 20px rgba(236, 234, 86, 0.5);
+    }
+    .rahu{
+        margin-top: 50px;
+        background-color: rgb(12, 12, 12);
+        padding: 20px;
+        border-radius: 20px;
+        
+    }
+    p{
+        font-size: 18px;
+    }
+    #readMore {
+            border: none;
+            background-color: black;
+            padding: 12px;
+            color: bisque;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 1em;
+            border-radius: 20px;
+            margin-top: 20px; 
+            cursor: pointer;
+        }
+
+        #readMore:hover {
+            background-color: bisque;
+            color: black;
+            transform: scale(1.09);
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+    
+</style>
+<script>
+
+    const lifePath5 = `Life Path 5 individuals are often characterized by their adventurous spirit, curiosity, and love for freedom. They thrive in dynamic environments and seek out new experiences, making them natural explorers and risk-takers. Their adaptability allows them to navigate change with ease, often embracing opportunities that others might shy away from. 
+    Social and charismatic, Life Path 5s tend to attract a diverse group of friends and acquaintances, as their vibrant energy and enthusiasm for life draw people in. However, this same desire for freedom can lead to a tendency to resist commitment, making it important for them to find partners who appreciate their need for space and adventure. In relationships, they are often most compatible with Life Paths 1, 3, and 7. Life Path 1’s ambition and determination can provide a solid foundation for the spontaneous nature of Life Path 5, while Life Path 3’s creativity and sociability complement their adventurous spirit, encouraging fun and exploration together. Life Path 7 individuals, known for their introspective and philosophical tendencies, can offer depth to the often surface-level pursuits of Life Path 5, fostering a balanced partnership that combines adventure with meaningful conversations. However, they may find challenges with more stable and routine-oriented Life Paths like 2 and 4, who might struggle to keep up with their need for excitement. Ultimately, Life Path 5 individuals flourish when they engage with partners who share their zest for life and can embrace their ever-evolving nature, creating relationships that are as dynamic and fulfilling as their own personalities.`;
+
+    let i = 0; // Initialize i for the typewriter
+    const speed = 42; // Speed in milliseconds between each character
+
+    const readMoreBtn = document.getElementById("readMore");
+
+    readMoreBtn.addEventListener("click", () => {
+        readMoreBtn.style.display = "none";
+        typeWriter();
+    });
+
+    function typeWriter() {
+        if (i < lifePath5.length) {
+            document.getElementById("mercuryBaby").innerHTML += lifePath5.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        }
+    }
+
+</script>
+</body>
+</html>

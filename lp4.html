@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Path 4</title>
+</head>
+<body>
+    <div class="rahu">
+    <h1>Your Life Path Number is 4!</h1>
+    <h4>~ you do not tell them what to do. ~</h4>
+    <div class="rahuimg">
+        <img src="./angelina-jolie-gif.gif">
+    </div>
+    <button id="readMore">Read More</button>
+    <div class="text">
+        <p id="rahuBaby"></p>
+    </div>
+</div>
+<style>
+    
+    @keyframes linearGradient {
+    0% { background-color: rgb(17, 16, 16); }
+    50% { background-color: rgb(24, 18, 16); }
+    100% { background-color: rgb(3, 3, 3); }
+}
+
+body {
+    background-color: black;
+    color: bisque;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    animation: linearGradient 10s infinite; /* Apply the animation to the body */
+}
+
+    img{
+        border-radius: 15px;
+        border: none;
+        margin-top: 10px;
+        height: 300px;
+        width: 300px;
+    }
+    img:hover{
+        transform: scale(1.11);
+        cursor: pointer;
+        box-shadow: 0 0 10px rgba(39, 2, 2, 0.5);
+    }
+    .rahu{
+        margin-top: 50px;
+        background-color: rgb(12, 12, 12);
+        padding: 20px;
+        border-radius: 20px;
+        
+    }
+    p{
+        font-size: 18px;
+    }
+    #readMore {
+            border: none;
+            background-color: black;
+            padding: 12px;
+            color: bisque;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 1em;
+            border-radius: 20px;
+            margin-top: 20px; 
+            cursor: pointer;
+        }
+
+        #readMore:hover {
+            background-color: bisque;
+            color: black;
+            transform: scale(1.09);
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+    
+</style>
+<script>
+
+    const lifePath4 = `People with Life Path 4 are often seen as grounded, hardworking, and highly reliable individuals. Their approach to life is marked by a strong sense of practicality and discipline, but beneath this steadfast exterior lies a subtle appreciation for beauty and a sophisticated outlook on the world. They possess an understated yet profound aesthetic sense, often finding elegance in simplicity and functionality.Though Life Path 4 individuals are known for their methodical and structured ways, they have a deep appreciation for aesthetic beauty. Their eye for detail often leads them to favor clean lines, symmetry, and well-crafted designs
+    People on Life Path 4 often resonate with a more sophisticated, vintage era — a time when craftsmanship and quality were paramount. This sophisticated taste reflects their desire for things that stand the test of time, mirroring their own approach to life, where success is built on a strong, enduring foundation.
+    In their careers and personal lives, Life Path 4 people are the builders, laying down solid foundations that support long-term success. However, their work isn't purely about efficiency; they approach tasks with an artistic flair, adding elegance to whatever they create. Whether in engineering, architecture, or even creative endeavors, they thrive when they can combine their love of structure with their appreciation for beauty.
+    Best match for Life Path 4 (very picky people, sir) is Life Path 6. In addition to Life Path 6, Life Path 8 is also a great friend to Life Path 8. Relationships with more adventurous or unconventional life paths (such as 5 or 3) may require more effort, as these individuals can find the 4’s structured approach too restrictive.`;
+
+    let i = 0; // Initialize i for the typewriter
+    const speed = 42; // Speed in milliseconds between each character
+
+    const readMoreBtn = document.getElementById("readMore");
+
+    readMoreBtn.addEventListener("click", () => {
+        readMoreBtn.style.display = "none";
+        typeWriter();
+    });
+
+    function typeWriter() {
+        if (i < lifePath4.length) {
+            document.getElementById("rahuBaby").innerHTML += lifePath4.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        }
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&family=Fredoka:wght@300..700&display=swap');
+    </style>
+    <title>Welcome to Celestial Insights</title>
+</head>
+<body>
+    <h1>celestial insights</h1>
+    <div class="form">
+        <label>Enter Your Name: 
+            <input type="text" id="nameInput" required placeholder="Must be at least 3 characters">
+        </label>
+        <label>Enter your Email: 
+            <input type="email" id="emailInput" required placeholder="Must be a valid email">
+        </label>
+        <div class="birthday">
+            <label>Day:  
+                <input type="number" id="dayInput" required placeholder="DD">
+            </label>
+            <label>Month:  
+                <input type="number" id="monthInput" required placeholder="MM">
+            </label>
+            <label>Year:  
+                <input type="number" id="yearInput" required placeholder="YYYY">
+            </label>
+        </div>
+        <p>By clicking on Submit, you agree to share your details with us.</p>
+        <button type="submit" id="submitBtn" onclick="numerology()">Submit Details</button> 
+    </div>
+    <footer>&copy; By Maithili Mukherjee. All Rights Reserved.</footer>
+    <style>
+        body {
+            display: flex; /* Use flexbox for centering */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100vh; /* Full viewport height */
+            text-align: center;
+            background-color: black;
+            color: bisque;
+            font-family: 'Fredoka', sans-serif;
+            background-image: url(./earth-moon-and-the-universe-national-space-day.gif);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0; /* Remove default body margin */
+            flex-direction: column;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            width: 550px;
+            height: auto; /* Change to auto for dynamic height */
+            margin-top: 0; /* Remove margin-top for centering */
+            box-shadow: 0 0 20px rgb(141, 223, 223), green, rgb(160, 160, 211);
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-opaque black background */
+            padding: 20px; /* Padding for better spacing */
+            border-radius: 10px; /* Rounded corners */
+        }
+
+        .birthday {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        label {
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        h1 {
+            margin-top: 100px;
+            font-size: 3em;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            text-shadow: 0 0 50px gray;
+        }
+
+        button {
+            background-color: black;
+            color: bisque;
+            padding: 12px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        button:hover {
+            background-color: bisque;
+            color: black;
+            transform: scale(1.05);
+            transition: 0.3s ease-in;
+        }
+
+        input:hover {
+            transform: scale(1.03);
+        }
+
+        input {
+            padding: 10px;
+            width: 200px;
+            border-radius: 5px;
+            border: 1px solid bisque;
+            background-color: black;
+            color: bisque;
+            font-family: 'Fredoka', sans-serif;
+        }
+        
+        h1:hover {
+            transform: scale(1.25);
+            transition: 0.5s ease-in-out;
+        }
+
+        .birthday input {
+            width: 100px;
+        }
+
+        footer {
+            margin-top: 100px;
+            text-shadow: 0 0 20px navy;
+        }
+    </style>
+
+    <script>
+        function numerology() {
+    const name = document.getElementById('nameInput').value;
+    const email = document.getElementById('emailInput').value;
+    const day = document.getElementById('dayInput').value;
+    const month = document.getElementById('monthInput').value;
+    const year = document.getElementById('yearInput').value;
+
+    if (name.length >= 3 && validateEmail(email) && day && month && year && validDate(day, month, year)) {
+        alert(`Thank you, ${name}! We've recorded your details.`);
+        calculateLifePath(Number(day), Number(month), Number(year));
+
+
+    } else {
+        alert("Please fill in all the fields correctly.");
+    }
+}
+
+function validateEmail(email) {
+    const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    return re.test(email);
+}
+
+function calculateLifePath(day, month, year) {
+    const sum = reduceToSingleDigit(day) + reduceToSingleDigit(month) + reduceToSingleDigit(year);
+    const lifePathNumber = reduceToSingleDigit(sum);
+
+    // Redirect based on Life Path Number
+    switch (lifePathNumber) {
+        case 1:
+            window.location.href = './lp1.html';
+            break;
+        case 2:
+            window.location.href = './lp2.html';
+            break;
+        case 3:
+            window.location.href = './lp3.html';
+            break;
+        case 4:
+            window.location.href = './lp4.html';
+            break;
+        case 5:
+            window.location.href = './lp5.html';
+            break;
+        case 6:
+            window.location.href = './lp6.html';
+            break;
+        case 7:
+            window.location.href = './lp7.html';
+            break;
+        case 8:
+            window.location.href = './lp8.html';
+            break;
+        case 9:
+            window.location.href = './lp9.html';
+            break;
+        default:
+            alert("Invalid Life Path number. Please check your details.");
+    }
+}
+
+function reduceToSingleDigit(num) {
+    while (num >= 10) {
+        num = num.toString().split('').reduce((acc, digit) => acc + parseInt(digit), 0);
+    }
+    return num;
+}
+    function validDate(day, month, year) {
+    day = parseInt(day);
+    month = parseInt(month);
+    year = parseInt(year);
+
+    // Check if year is valid
+    if (isNaN(year) || year < 1 || year > 9999) return false;
+
+    // Check if month is valid
+    if (isNaN(month) || month < 1 || month > 12) return false;
+
+    // Check days in month
+    const daysInMonth = [31, (isLeapYear(year) ? 29 : 28), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+    // Check if day is valid for the month
+    return day > 0 && day <= daysInMonth[month - 1];
+}
+
+// Function to check if the year is a leap year
+function isLeapYear(year) {
+    return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+}
+
+
+
+    </script>
+</body>
+</html>

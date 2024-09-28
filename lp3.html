@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Path Number 3</title>
+</head>
+<body>
+    <div class="jupiter">
+        <h1>Your Life Path Number is 3!</h1>
+        <h4>~ Bro, you're Uncle Jupiter's Favourite ~</h4>
+        <div class="jupiterimg">
+            <img src="./jupiter.gif">
+        </div>
+        <button id="readMore">Read More</button>
+        <div class="text">
+            <p id="jupiterBaby"></p>
+        </div>
+    </div>
+    <style>
+        body{
+            background-color: black;
+            background-size: cover;
+            color: bisque;
+            font-family: 'Times New Roman', Times, serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        img{
+            border-radius: 15px;
+            border: none;
+            margin-top: 10px;
+            height: 300px;
+            width: 300px;
+        }
+        img:hover{
+            transform: scale(1.11);
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(192, 183, 183, 0.5);
+        }
+        .jupiter{
+            padding: 20px;
+            background-color: rgb(10, 10, 10);
+            border-radius: 20px;
+        }
+        p{
+            font-size: 20px;
+        }
+        #readMore {
+                border: none;
+                background-color: black;
+                padding: 12px;
+                color: bisque;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-size: 1em;
+                border-radius: 20px;
+                margin-top: 20px; 
+                cursor: pointer;
+            }
+    
+            #readMore:hover {
+                background-color: bisque;
+                color: black;
+                transform: scale(1.09);
+                transition: 0.5s ease-in;
+            }
+        
+    </style>
+    <script>
+    
+        const lifePath3 = `When you're in a room, people can sense your energy — it's almost magnetic. You're the type of person who can transform a mundane situation into something memorable. Conversations with you often leave people inspired or eager to hear more. You're unpredictable in the best way, constantly reinventing yourself or your approach to life, which keeps others guessing and always wanting to be part of your journey.
+
+Your artistic tendencies don't just apply to traditional forms like painting or music but expand into how you approach life itself. You infuse creativity into problem-solving, personal expression, and even how you carry yourself. You enjoy exploring different ways to express the truths you observe, whether those truths are about the world around you or your inner world. That makes you someone whose influence reaches far beyond just surface charm — you're impactful on an emotional and intellectual level too.
+You are the most compatible with life path numbers 1,5 and 9. Your worst matches are prolly Life Path Numbers 4, 6 and 8 (keyword: prolly, don't come for my throat).`;
+    
+        let i = 0; // Initialize i for the typewriter
+        const speed = 50; // Speed in milliseconds between each character
+    
+        const readMoreBtn = document.getElementById("readMore");
+    
+        readMoreBtn.addEventListener("click", () => {
+            readMoreBtn.style.display = "none";
+            typeWriter();
+        });
+    
+        function typeWriter() {
+            if (i < lifePath3.length) {
+                document.getElementById("jupiterBaby").innerHTML += lifePath3.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+    
+    </script>
+</body>
+</html>
